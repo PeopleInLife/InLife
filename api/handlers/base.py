@@ -10,6 +10,13 @@ class BaseHandler(tornado.web.RequestHandler):
     subclass this one.
     """
 
+    def write_error(self, status_code, **kwargs):
+        if status_code == 404:
+            self.set_status(404)
+            self.render('404.html', page=None)
+        else:
+            self.write('unknown')
+
     def load_json(self):
         """Load JSON from the request body and store them in
         self.request.arguments, like Tornado does by default for POSTed form
