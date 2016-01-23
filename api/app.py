@@ -6,7 +6,12 @@ import tornado.web
 from tornado.options import options
 
 from settings import settings
+from handlers.error import Error404Handler
 from urls import url_patterns
+
+settings['default_handler_class'] = Error404Handler
+settings['default_handler_args'] = dict(status_code=404)
+
 
 class TornadoBoilerplate(tornado.web.Application):
     def __init__(self):
