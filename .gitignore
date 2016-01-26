@@ -9,6 +9,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 env/
+.tmp/
 build/
 develop-eggs/
 dist/
@@ -63,3 +64,9 @@ target/
 
 # Ide Extensions
 .idea/
+
+# modules
+node_modules/
+bower_components
+
+
